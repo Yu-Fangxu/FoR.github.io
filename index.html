@@ -201,22 +201,22 @@ reasoning (BlocksWorld), math puzzle solving (Game24), and logical reasoning
 <section class="section">
   <div class="container is-max-desktop">
     <div class="content">
-     <h3>COLD-Attack Framework</h3>
-    <p> The following diagram shows an overview of COLD-Attack framework. </p>
+     <h3>FoR Framework</h3>
+    <p> The following diagram shows an overview of the FoR framework. </p>
       </div>
     <!-- Summary of the work -->
      <div class="content">
     <div style="text-align: center; margin-top: 20px;"> <!-- Center align the image container -->
-      <img src="./static/images/COLD_attack_diagram.png"
+      <img src="./static/images/main_arch.png"
            style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;" <!-- Make the image responsive and centered -->
     </div>
     <!-- Explanation of the diagram -->
     <div class="content" style="margin-top: 20px;">
-      <p>As illustrated in the above diagram, our COLD-Attack framework includes three main steps:</p>
+      <p>As illustrated in the above diagram, our FoR framework includes three main steps:</p>
       <ol>
-        <li><strong>Energy function formulation:</strong> Specify energy functions properly to capture the attack constraints such as fluency, stealthiness, sentiment, and left-right-coherence.</li>
-        <li><strong>Langevin dynamics sampling:</strong> Run Langevin dynamics recursively for specific steps to obtain a good energy-based model governing the adversarial attack logits.</li>
-        <li><strong>Decoding process:</strong> Leverage an LLM-guided decoding process to convert the continuous logits into discrete text attacks.</li>
+        <li><strong>Trajectory exploration:</strong> Combine both on-policy and off-policy strategies to explore the trajectory space and produce effective samples.</li>
+        <li><strong>Policy training:</strong> Train LLM policy with the collected trajectories via trajectory balance loss objective.</li>
+        <li><strong>Sampling solutions:</strong> Use trained LLM policy to generate diverse reasoning paths.</li>
       </ol>
       <p>
     </div>
