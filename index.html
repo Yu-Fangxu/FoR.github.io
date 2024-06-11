@@ -179,13 +179,13 @@ supervised fine-tuning helps with quality, it requires extensive supervision dat
 to capture the full diversity of solutions. Alternatively, reinforcement learning
 methods like PPO aim to find limited highest-reward solutions while neglecting
 the solution diversity, akin to convergent thinking. To address these limitations, we
-propose Flow of Reasoning (FOR)—an efficient LLM training approach enabling
-diverse reasoning with minimal data. FOR formulates multi-step LLM reasoning
+propose Flow of Reasoning (FoR)—an efficient LLM training approach enabling
+diverse reasoning with minimal data. FoR formulates multi-step LLM reasoning
 as a Markovian flow from an initial state to terminal states. The formulation allows
 to adapt principled GFlowNet approaches to train the LLM as a policy, which
 is able to sample multiple reasoning paths with probabilities proportional to the
 unnormalized reward. Empirical results show that, with limited training data (e.g.,
-15 examples), FOR can discover diverse high-quality solutions that excel greatly
+15 examples), FoR can discover diverse high-quality solutions that excel greatly
 beyond current state-of-the-art methods across three tasks, including embodied
 reasoning (BlocksWorld), math puzzle solving (Game24), and logical reasoning
 (PrOntoQA).
@@ -267,39 +267,36 @@ reasoning (BlocksWorld), math puzzle solving (Game24), and logical reasoning
     <!-- Summary of the work -->
     <div class="content">
       <h3>Experiment Results</h3>
-      <strong>Fluent suffix attack</strong>
+      <strong>Embodied Reasoning</strong>
       <div style="text-align: center; margin-top: 20px;"> <!-- Center align the image container -->
-      <img src="./static/images/t1.png"
+      <img src="./static/images/bw_result.png"
            style="width: 100%; max-width: 800px; height: auto; display: block; margin: 0 auto;" <!-- Make the image responsive and centered -->
         </div>
         <div class="content has-text-justified">
         <ul>
-          <li> COLD-Attack achieves comparable ASRs compared to the existing baseline methods such as GCG, AutoDAN-zhu, and AutoDAN-liu.
-          <li> COLD-Attack stands out by achieving better stealthiness with lower PPL compared to all other methods.
+          <li> FoR achieves state-of-the-art accuracy compared to the existing baseline methods such as Chain-of-Thought, Tree-of-Thought, RAP.
+          <li> FoR generates more diverse solution reasoning paths compared to other methods
         </ul>
        </div>
      
-      <strong>Paraphrase attack</strong>
+      <strong>Mathematical reasoning</strong>
       <div style="text-align: center; margin-top: 20px;"> <!-- Center align the image container -->
-      <img src="./static/images/t2.png"
+      <img src="./static/images/game_result.png"
            style="width: 50%; max-width: 800px; height: auto; display: block; margin: 0 auto;" <!-- Make the image responsive and centered -->
       </div>
         <div class="content has-text-justified">
         <ul>
-          <li> COLD-Attack produces high-quality rephrasing.
-          <li> COLD-Attack significantly outperforms GPT-4-based rephrased queries in terms of ASR.
-          <li> Our paraphrase attack with sentiment control reveals that different LLMs exhibit varying susceptibilities to different sentiments.
+          <li> FoR outperforms other baselines both in diversity and accuracy.
         </ul>
        </div>
-      <strong>Attack with left-right-coherence control</strong>
+      <strong>Logical Reasoning</strong>
       <div style="text-align: center; margin-top: 20px;"> <!-- Center align the image container -->
-      <img src="./static/images/t3.png"
+      <img src="./static/images/logical_result.png"
            style="width: 70%; max-width: 800px; height: auto; display: block; margin: 0 auto;" <!-- Make the image responsive and centered -->
         </div>
          <div class="content has-text-justified">
         <ul>
-          <li> COLD-Attack can effectively generate stealthy attacks that satisfy the left-right-coherence requirement.
-          <li> COLD-Attack also allows the use of separate prompts to pose output constraints on the target LLMs.
+          <li> FoR can effectively solve logical reasoning in both in-distribution and out-of-distribution reasoning settings. 
         </ul>
       </p>
       </div>
@@ -313,11 +310,13 @@ reasoning (BlocksWorld), math puzzle solving (Game24), and logical reasoning
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{guo2024cold,
-  author    = {Guo, Xingang and Yu, Fangxu and Zhang, Huan and Qin, Lianhui and Hu, Bin},
-  title     = {COLD-Attack: Jailbreaking LLMs with Stealthiness and Controllability},
-  journal   = {arXiv preprint arXiv:2402.08679},
-  year      = {2024},
+    <pre><code>@misc{yu2024flow,
+      title={Flow of Reasoning: Efficient Training of LLM Policy with Divergent Thinking}, 
+      author={Fangxu Yu and Lai Jiang and Haoqiang Kang and Shibo Hao and Lianhui Qin},
+      year={2024},
+      eprint={2406.05673},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
 }</code></pre>
   </div>
 </section>
