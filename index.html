@@ -6,7 +6,7 @@
         content="FoR">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Flow of Reasoning: Efficient Training of LLM Policy with Divergent Thinking</title>
+  <title>Flow of Reasoning: Training LLMs for Divergent Reasoning with Minimal Examples</title>
 
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -171,24 +171,7 @@ with Divergent Thinking</h1>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Divergent thinking, the cognitive process of generating diverse solutions, is a hallmark of human creativity and problem-solving. For machines, sampling diverse
-solution trajectories in complex reasoning problems is crucial for robust outcomes,
-data augmentation, and enhanced model generalization. Large language models
-(LLMs) often struggle with generating high-quality, diverse reasoning. While
-supervised fine-tuning helps with quality, it requires extensive supervision data
-to capture the full diversity of solutions. Alternatively, reinforcement learning
-methods like PPO aim to find limited highest-reward solutions while neglecting
-the solution diversity, akin to convergent thinking. To address these limitations, we
-propose Flow of Reasoning (FoR)—an efficient LLM training approach enabling
-diverse reasoning with minimal data. FoR formulates multi-step LLM reasoning
-as a Markovian flow from an initial state to terminal states. The formulation allows
-to adapt principled GFlowNet approaches to train the LLM as a policy, which
-is able to sample multiple reasoning paths with probabilities proportional to the
-unnormalized reward. Empirical results show that, with limited training data (e.g.,
-15 examples), FoR can discover diverse high-quality solutions that excel greatly
-beyond current state-of-the-art methods across three tasks, including embodied
-reasoning (BlocksWorld), math puzzle solving (Game24), and logical reasoning
-(PrOntoQA).
+            The ability to generate diverse solutions to a given problem is a hallmark of human creativity. This divergent reasoning is also crucial for machines, enhancing their robustness and enabling them to assist humans in many applications, such as scientific discovery. However, existing approaches to multi-step reasoning with large language models (LLMs) have mostly focused only on reasoning accuracy, without further discovering more diverse valid solutions. For example, supervised fine-tuning improves reasoning quality but requires vast labeled data, while reward-maximizing reinforcement learning finds top-reward solutions while neglecting the solution diversity. To fill this gap, we propose Flow of Reasoning (FoR), an efficient diversity-seeking LLM finetuning method aimed at improving reasoning quality and diversity with minimal data. FoR formulates multi-step LLM reasoning as a Markovian Flow on a DAG-structured reasoning graph. This formulation allows us to incorporate and adapt principled GFlowNet approaches, for finetuning LLMs to sample divergent paths with probabilities proportional to the (unnormalized) reward of target problems. Extensive experiments show that, with limited training examples (e.g., 15 examples), FoR enables the discovery of diverse, creative, high-quality solutions, greatly outperforming a wide range of existing inference and training methods across six challenging reasoning tasks, including BlocksWorld (embodied reasoning), Game24 (math puzzle solving), Rubik's Cube (spatial reasoning), 1D-ARC (abstraction reasoning), GSM8k (math reasoning), and ProntoQA (logical reasoning).
           </p>
         </div>
       </div>
